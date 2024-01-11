@@ -8,7 +8,7 @@
 
 This repository contains the details and source code for **OpenSearch Changelog PR Bridge** service, part of the broader **Automated Changelog and Release Notes Process** adopted by the [OpenSearch Project](https://opensearch.org/). It presents comprehensive information on how this service works and interacts with the [OpenSearch Changelog Bot](https://github.com/apps/opensearch-changeset-bot) and [OpenSearch Changelog Workflow](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action), and also guidelines for contributing to it.
 
-For more information about the **Automated Changelog and Release Notes Process** as a whole, please refer to [OpenSearch Changelog Workflow]((https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action)) repo.
+For more information about the **Automated Changelog and Release Notes Process** as a whole, please refer to [OpenSearch Changelog Workflow](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repo.
 
 <!-- prettier-ignore-start -->
 <!-- omit in toc -->
