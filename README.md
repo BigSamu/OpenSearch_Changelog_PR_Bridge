@@ -1,10 +1,9 @@
 <!-- prettier-ignore-start -->
 <!-- omit in toc -->
-# OpenSearch Automated Changelog and Release Notes Process
+# OpenSearch Changelog PR Bridge
 <!-- prettier-ignore-end -->
 
 ![Apache 2.0 License](https://img.shields.io/github/license/saltstack/salt)
-
 <!-- ![Coverage Badge](./badges/coverage.svg) -->
 
 This repository contains the details and source code for **OpenSearch Changelog PR Bridge** service, part of the broader **Automated Changelog and Release Notes Process** adopted by the [OpenSearch](https://opensearch.org/) Project. It explains how this service works and how it interacts with [OpenSearch](https://github.com/apps/opensearch-changeset-bot)](https://github.com/apps/opensearch-changeset-bot) Changelog Bot](https://github.com/apps/opensearch-changeset-bot) and [OpenSearch Changelog Workflow]((https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action)), aimed at streamlining contributions for any OpenSearch repo, and also guidelines for contributing to it.
