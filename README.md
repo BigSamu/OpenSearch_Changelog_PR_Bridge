@@ -10,15 +10,11 @@ This repository contains the details and source code for **OpenSearch Changelog 
 
 For more information about the **Automated Changelog and Release Notes Process** as a whole, please refer to [OpenSearch Changelog Workflow]((https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action)) repo.
 
-<left>
-  <img src="./assets/OpenSearch-bot-logo.png" alt="OpenSearch-bot Logo" width="180" height="180">
-</left>
-
+<!-- prettier-ignore-start -->
 <!-- omit in toc -->
-
 ## Table of Contents
+<!-- prettier-ignore-end -->
 
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [Installing on an OpenSearch Repository](#installing-on-an-opensearch-repository)
   - [Installing on Forked Repositories](#installing-on-forked-repositories)
