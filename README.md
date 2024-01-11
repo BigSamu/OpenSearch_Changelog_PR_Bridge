@@ -1,22 +1,29 @@
-
+<!-- prettier-ignore-start -->
 <!-- omit in toc -->
-# OpenSearch-bot
+# OpenSearch Automated Changelog and Release Notes Process
+<!-- prettier-ignore-end -->
 
 ![Apache 2.0 License](https://img.shields.io/github/license/saltstack/salt)
+
 <!-- ![Coverage Badge](./badges/coverage.svg) -->
 
-This project contains the source code for a GitHub App that automates the release process in OpenSearch repositories.
+This repository contains the details and source code for **OpenSearch Changelog PR Bridge** service, part of the broader **Automated Changelog and Release Notes Process** adopted by the [OpenSearch](https://opensearch.org/) Project. It explains how this service works and how it interacts with [OpenSearch](https://github.com/apps/opensearch-changeset-bot)](https://github.com/apps/opensearch-changeset-bot) Changelog Bot](https://github.com/apps/opensearch-changeset-bot) and [OpenSearch Changelog Workflow]((https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action)), aimed at streamlining contributions for any OpenSearch repo, and also guidelines for contributing to it.
 
 <left>
   <img src="./assets/OpenSearch-bot-logo.png" alt="OpenSearch-bot Logo" width="180" height="180">
 </left>
 
 <!-- omit in toc -->
+
 ## Table of Contents
+
+- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
+  - [Installing on an OpenSearch Repository](#installing-on-an-opensearch-repository)
+  - [Installing on Forked Repositories](#installing-on-forked-repositories)
 - [Features](#features)
 - [Usage](#usage)
-- [Acknowledgements](#acknowledgements)
+- [Mantainers](#mantainers)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -25,6 +32,7 @@ This project contains the source code for a GitHub App that automates the releas
 In order for the app to work as intended, it must be installed both on an OpenSearch repository as well as on any forked repositories that PRs originate from.
 
 <!-- omit from toc -->
+
 ### Installing on an OpenSearch Repository
 
 - Navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-bot) installation page and click "Install".
@@ -32,6 +40,7 @@ In order for the app to work as intended, it must be installed both on an OpenSe
 - Follow the instructions to complete the installation.
 
 <!-- omit from toc -->
+
 ### Installing on Forked Repositories
 
 - In the forked OpenSearch repository, navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-bot) installation page and click "Install".
@@ -84,9 +93,10 @@ Here is an example of a properly-formatted changelog entry in a PR description:
 
 The app is equipped with robust error handling so that, if your PR description lacks the required information or needs reformatting in some way, the process will terminate and a comment will be added to your PR explaining what needs to be fixed.
 
-## Acknowledgements
+## Mantainers
 
-This app was developed by [Samuel Valdes Gutierrez](https://github.com/BigSamu), [Johnathon Bowers](https://github.com/JohnathonBowers), [Qiwen Li](https://github.com/MadaniKK), and [Will Yang](https://github.com/CMDWillYang), under the supervision of [Josh Romero](https://github.com/joshuarrrr), [Ashwin P. Chandran](https://github.com/ashwin-pc), [Matt Provost](https://github.com/BSFishy), and [Anan Zhuang](https://github.com/ananzh).
+- [Samuel Valdes Gutierrez](https://github.com/BigSamu)
+- [Johnathon Bowers](https://github.com/JohnathonBowers)
 
 ## Contributing
 
