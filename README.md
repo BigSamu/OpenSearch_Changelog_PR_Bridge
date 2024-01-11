@@ -6,7 +6,7 @@
 ![Apache 2.0 License](https://img.shields.io/github/license/saltstack/salt)
 <!-- ![Coverage Badge](./badges/coverage.svg) -->
 
-This repository contains the details and source code for **OpenSearch Changelog PR Bridge** service, part of the new broader **Automated Changelog and Release Notes Process** adopted by the [OpenSearch Project](https://opensearch.org/). It presents comprehensive information on how this service works and interacts with the [OpenSearch Changelog Bot](https://github.com/apps/opensearch-changeset-bot) and [OpenSearch Changelog Workflow](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action),including also guidelines on how to contribute.
+This repository contains the details and source code for **OpenSearch Changelog PR Bridge** service, part of the new broader **Automated Changelog and Release Notes Process** adopted by the [OpenSearch Project](https://opensearch.org/). It presents comprehensive information on how this service works and interacts with the [OpenSearch Changelog Bot](https://github.com/apps/opensearch-changeset-bot) and [OpenSearch Changelog Workflow](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action), including also guidelines on how to contribute.
 
 For more information about the **Automated Changelog and Release Notes Process** as a whole, please refer to [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repo.
 
