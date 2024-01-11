@@ -2,9 +2,8 @@
 <!-- omit in toc -->
 # OpenSearch-bot
 
-![MIT License](https://img.shields.io/badge/license-MIT-blue)
-![GitHub contributors](https://img.shields.io/github/contributors/BigSamu/OpenSearch-bot)
-![Coverage Badge](./badges/coverage.svg)
+![Apache 2.0 License](https://img.shields.io/github/license/saltstack/salt)
+<!-- ![Coverage Badge](./badges/coverage.svg) -->
 
 This project contains the source code for a GitHub App that automates the release process in OpenSearch repositories.
 
@@ -95,4 +94,4 @@ Contributions to the `OpenSearch-bot` are welcome! See our [Developer Guide](doc
 
 ## License
 
-This app is licensed under the [MIT License](LICENSE).
+This project is an open-source product released under the Apache 2.0 license (see either [the Apache site](https://www.apache.org/licenses/LICENSE-2.0) or the [LICENSE.txt file](./LICENSE.txt)). The Apache 2.0 license allows you to freely use, modify, distribute, and sell your own products that include Apache 2.0 licensed software.
