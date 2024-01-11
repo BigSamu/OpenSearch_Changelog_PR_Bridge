@@ -90,7 +90,9 @@ This app was developed by [Samuel Valdes Gutierrez](https://github.com/BigSamu),
 
 ## Contributing
 
-Contributions to the `OpenSearch-bot` are welcome! See our [Developer Guide](docs/DEVELOPER_GUIDE.md) for instructions on how to set up the project in your local environment. If you have any suggestions for how to improve the app, please feel free to open an issue or submit a pull request.
+The **Automated Changelog Release Notes Process** is the result of a concerted effort by OpenSearch maintainers and contributors to improve the development experience for all involved in OpenSearch suite.
+
+Contributions to the **OpenSearch Changelog PR Bridge** are welcome! See our [Developer Guide](docs/DEVELOPER_GUIDE.md) for instructions on how to set up the project in your local environment and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## License
 
