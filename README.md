@@ -15,6 +15,7 @@ For more information about the **Automated Changelog and Release Notes Process**
 ## Table of Contents
 <!-- prettier-ignore-end -->
 
+- [Process Overview](#process-overview)
 - [Installation](#installation)
   - [Installing on an OpenSearch Repository](#installing-on-an-opensearch-repository)
   - [Installing on Forked Repositories](#installing-on-forked-repositories)
@@ -24,11 +25,14 @@ For more information about the **Automated Changelog and Release Notes Process**
 - [Contributing](#contributing)
 - [License](#license)
 
+## Process Overview
+
+As explained in the README.md in **OpenSearch Changelog Workflow and Release Notes Script** [repo](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) , **OpenSearch Changelog PR Bridge** is a minimal service interacting with **OpenSearch Changelog Workflow**, used to commit changeset files in a openned PR through a **OpenSearch Changelog Bot**. Below a diagram depicting the details in the relation of these three entities:
+
 ## Installation
 
 In order for the app to work as intended, it must be installed both on an OpenSearch repository as well as on any forked repositories that PRs originate from.
 
-<!-- omit from toc -->
 
 ### Installing on an OpenSearch Repository
 
