@@ -29,7 +29,7 @@ For more information about the **Automated Changelog and Release Notes Process**
 
 As explained in the README.md in **OpenSearch Changelog Workflow and Release Notes Script** [repo](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) , **OpenSearch Changelog PR Bridge** is a minimal service interacting with **OpenSearch Changelog Workflow**, used to commit changeset files in a openned PR through a **OpenSearch Changelog Bot**. Below a diagram depicting the details in the relation of these three entities:
 
-![OpenSearch_Automated_Changeset_Creation_Update](./assets/OpenSearch_Automated_Changeset_Creation_Update.png)
+![OpenSearch_Automated_Changeset_Creation_Update](./assets/OpenSearch_Automated_Chageset_Creation_Update_Diagram.png)
 
 ## Installation
 
