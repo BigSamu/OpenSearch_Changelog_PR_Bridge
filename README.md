@@ -4,6 +4,7 @@
 <!-- prettier-ignore-end -->
 
 ![Apache 2.0 License](https://img.shields.io/github/license/saltstack/salt)
+
 <!-- ![Coverage Badge](./badges/coverage.svg) -->
 
 This repository contains the details and source code for **OpenSearch Changelog PR Bridge** service, part of the new broader **Automated Changelog and Release Notes Process** adopted by the [OpenSearch Project](https://opensearch.org/). It presents comprehensive information on how this service works and interacts with the [OpenSearch Changelog Bot](https://github.com/apps/opensearch-changeset-bot) and [OpenSearch Changelog Workflow](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action), including also guidelines on how to contribute.
@@ -32,8 +33,10 @@ In this manner, when **OpenSearch Changelog Workflow** service sends a request t
 
 ## Installation
 
-In order to use the **OpenSearch Changelog Workflow** service for automatic creation or update of changeset files, navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-changeset-bot) installation page and click "Install". Follow the instructions to complete the installation and only install this App in all forked OpenSearch repositories where you want to have this feature activated.
+In order to use the **OpenSearch Changelog Workflow** service for automatic creation or update of changeset files:
 
+- Navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-changeset-bot) installation page and click "Install".
+- Follow the instructions to complete the installation and only install this App in all forked OpenSearch repositories where you want to have this feature activated.
 
 ## Usage
 
