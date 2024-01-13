@@ -33,16 +33,18 @@ In this manner, when **OpenSearch Changelog Workflow** service sends a request t
 
 ## Installation
 
-In order to use the **OpenSearch Changelog Workflow** service for automatic creation or update of changeset files:
+In order to use the **OpenSearch Changelog Workflow** service for automatic creation or update of changeset files in any of your OpenSearch forked repos:
 
 - Navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-changeset-bot) installation page and click "Install".
-- Follow the instructions to complete the installation and only install this App in all forked OpenSearch repositories where you want to have this feature activated.
+- Follow the instructions there and only install this App in all forked OpenSearch repositories where you want to have this feature activated.
 
 ## Usage
 
-In your opened PR, add the changelog entries on your PR description under the "Changelog" section. If the entry is a valid one (in other words, the parsing succeeds) or not a 'skip' entry, then a valid changeset file will be created on your forked repository, with the following commit appearing in the PR conversation pannel:
+In your opened PR, add the changelog entries on your PR description under the "Changelog" section. If the entry is a valid one (i.e. parsing succeeds) or is not a 'skip' entry, then a valid changeset file will be created on your forked repository. A commit message like the one below will appear in the PR conversation pannel of GitHub web UI:
 
 ![Changeset_Commit_Message](./assets/Changeset_Commit_Message.png)
+
+For more references on how to create a valid changelog entry, please refer to [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repository, **Usage** section.
 
 ## Mantainers
 
