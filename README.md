@@ -55,7 +55,7 @@ For more references on how to create a valid changelog entry, please refer to [O
 
 The **Automated Changelog Release Notes Process** is the result of a concerted effort by OpenSearch maintainers and contributors to improve the development experience for all involved in OpenSearch suite.
 
-Contributions to the **OpenSearch Changelog PR Bridge** are welcome! See our [Developer Guide](docs/DEVELOPER_GUIDE.md) for instructions on how to set up the project in your local environment and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+Contributions to the **OpenSearch Changelog PR Bridge** are welcome! See our [Developer Guide](./DEVELOPER_GUIDE.md) for instructions on how to set up the project in your local environment and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## License
 
