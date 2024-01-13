@@ -27,7 +27,9 @@ For more information about the **Automated Changelog and Release Notes Process**
 
 ## Process Overview
 
-As explained in the README.md in **OpenSearch Changelog Workflow and Release Notes Script** [repo](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) , **OpenSearch Changelog PR Bridge** is a minimal service interacting with **OpenSearch Changelog Workflow**, used to commit changeset files in a openned PR through a **OpenSearch Changelog Bot**. Below a diagram depicting the details in the relation of these three entities:
+As explained in [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repo, **OpenSearch Changelog PR Bridge** is a minimal service interacting with **OpenSearch Changelog Workflow**, used to commit changeset on behalf of a contributor.
+
+The idea behind this service is that if a contributor wants to use the option for an `Automated Changeset Creation/Update` job, then he can install the GitHub App **[OpenSearch Changelog Bot](https://github.com/apps/opensearch-changeset-bot)** in his forked repo to include this feature. This App, once set up, allows the **OpenSearch Changelog PR Bridge** service to operate on behalf of the contributor, as specific permissions are granted by him during the installation process of the App. This is similar to when a user grants permission to a third-party library to access its resources in Google Photos, for example. In this manner, the **OpenSearch Changelog Workflow** service sends a request to the **OpenSearch Changelog PR Bridge** service. This enables the service to commit changeset files to the contributor's repository, as it possesses the necessary permissions for this action. Below is a diagram illustrating this overall process.
 
 ![OpenSearch_Automated_Changeset_Creation_Update](./assets/OpenSearch_Automated_Chageset_Creation_Update_Diagram.png)
 
