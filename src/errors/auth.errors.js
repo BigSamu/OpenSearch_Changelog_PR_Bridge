@@ -1,4 +1,4 @@
-import { CustomError } from "./base.errors";
+import { CustomError } from "./base.errors.js";
 
 /**
  * Represents an error that occurs when the authorized API key has not been configured.
