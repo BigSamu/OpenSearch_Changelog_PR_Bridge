@@ -16,7 +16,7 @@ import {
 } from "./config/constants.js";
 
 
-// Intiliaze express instance
+// Initiliaze express instance
 const app = express(); // Express server
 
 // Set up body-parsing middlewares
