@@ -41,7 +41,7 @@ In order to use the **OpenSearch Changelog Workflow** service for automatic crea
 
 ## 4. Usage
 
-In your opened PR, add the changelog entries on your PR description under the "Changelog" section. If the entry is a valid one (i.e. parsing succeeds) or is not a 'skip' entry, then a valid changeset file will be created on your forked repository. A commit message like the one below will appear in the PR conversation panel of GitHub web UI:
+In your opened PR, add the changelog entries on your PR description under the `## Changelog`` section. If the entry is valid (i.e., parsing succeeds) or there is not a `- skip`` entry, then a valid changeset file will be created on your forked repository. A commit message like the one below will appear in the PR conversation panel of GitHub web UI:
 
 ![Changeset_Created_Updated_Commit_Message](./assets/Changeset_Created_Updated_Commit_Message.png)
 
