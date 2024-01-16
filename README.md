@@ -45,7 +45,7 @@ In your opened PR, add the changelog entries on your PR description under the `#
 
 ![Changeset_Created_Updated_Commit_Message](./assets/Changeset_Created_Updated_Commit_Message.png)
 
-For more references on how to create a valid changelog entry, please refer to [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repository, **Usage** section.
+For more references on how to create a valid changelog entry, please refer to [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repository.
 
 ## 5. Mantainers
 
