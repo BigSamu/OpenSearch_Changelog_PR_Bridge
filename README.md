@@ -1,98 +1,67 @@
-
+<!-- prettier-ignore-start -->
 <!-- omit in toc -->
-# OpenSearch-bot
+<h1> OpenSearch Changelog PR Bridge </h1>
+<!-- prettier-ignore-end -->
 
-![MIT License](https://img.shields.io/badge/license-MIT-blue)
-![GitHub contributors](https://img.shields.io/github/contributors/BigSamu/OpenSearch-bot)
-![Coverage Badge](./badges/coverage.svg)
+![Apache 2.0 License](https://img.shields.io/github/license/saltstack/salt)
 
-This project contains the source code for a GitHub App that automates the release process in OpenSearch repositories.
+<!-- ![Coverage Badge](./badges/coverage.svg) -->
 
-<left>
-  <img src="./assets/OpenSearch-bot-logo.png" alt="OpenSearch-bot Logo" width="180" height="180">
-</left>
+This repository contains the details and source code for **OpenSearch Changelog PR Bridge** service, part of the new broader **Automated Changelog and Release Notes Process** adopted by the [OpenSearch Project](https://opensearch.org/). It presents comprehensive information on how this service works and interacts with the [OpenSearch Changelog Bot](https://github.com/apps/opensearch-changeset-bot) and [OpenSearch Changelog Workflow](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action), including also guidelines on how to contribute.
 
+For more information about the **Automated Changelog and Release Notes Process** as a whole, please refer to [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repository.
+
+<!-- prettier-ignore-start -->
 <!-- omit in toc -->
-## Table of Contents
-- [Installation](#installation)
-- [Features](#features)
-- [Usage](#usage)
-- [Acknowledgements](#acknowledgements)
-- [Contributing](#contributing)
-- [License](#license)
+<h2>Table of Contents</h2>
+<!-- prettier-ignore-end -->
 
-## Installation
+- [1. Process Overview](#1-process-overview)
+- [2. Installation](#2-installation)
+- [3. Usage](#3-usage)
+- [4. Mantainers](#4-mantainers)
+- [5. Contributing](#5-contributing)
+- [6. License](#6-license)
+- [7. Need Help?](#7-need-help)
 
-In order for the app to work as intended, it must be installed both on an OpenSearch repository as well as on any forked repositories that PRs originate from.
+## 1. Process Overview
 
-<!-- omit from toc -->
-### Installing on an OpenSearch Repository
+As explained in [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action), **OpenSearch Changelog PR Bridge** is a minimal service interacting with **OpenSearch Changelog Workflow**, used to commit changeset files on behalf of a contributor. The idea behind this is that if a contributor wants to use the option for an `Automated Changeset Creation/Update` job, then he can install a GitHub App - **[OpenSearch Changelog Bot](https://github.com/apps/opensearch-changeset-bot)** - to include this feature in his forked repository. This App, once set up, allows the **OpenSearch Changelog PR Bridge** to operate on behalf of the contributor, as specific permissions are granted by him during this installation process.
 
-- Navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-bot) installation page and click "Install".
-- Select the OpenSearch repository where this app will manage PRs and process changeset files.
-- Follow the instructions to complete the installation.
+In this manner, when **OpenSearch Changelog Workflow** service sends a request to the **OpenSearch Changelog PR Bridge** service, the latter is enabled to commit changeset files to the contributor's repository, as it possesses the necessary permissions for this action. Below is a diagram illustrating this overall process.
 
-<!-- omit from toc -->
-### Installing on Forked Repositories
+![OpenSearch_Automated_Changeset_Creation_Update](./assets/OpenSearch_Automated_Chageset_Creation_Update_Diagram.png)
 
-- In the forked OpenSearch repository, navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-bot) installation page and click "Install".
-- Follow the instructions to complete the installation on the forked repository.
+## 2. Installation
 
-## Features
+In order to use the **OpenSearch Changelog Workflow** service for automatic creation or update of changeset files in any of your OpenSearch forked repos:
 
-The app works as follows:
+- Navigate to the [OpenSearch-bot](https://github.com/apps/opensearch-changeset-bot) installation page and click "Install".
+- Follow the instructions there and only install this App in all forked OpenSearch repositories where you want to have this feature activated.
 
-1. **PR Changelog Processing:** When a user opens or edits a pull request (PR) from a forked repository against an OpenSearch repository, the app scans the PR description, looking for changelog entries listed in a "Changelog" section. It then generates a changeset file from these entries and commits this file to the open PR.
+## 3. Usage
 
-2. **Automating Release Documentation:** When the PR is merged, the changeset file is stored in a designated directory in the base repository. At the time of a new release, the app scans this directory and uses the changeset files to generate comprehensive release notes and update the changelog with new entries.
+In your opened PR, add the changelog entries on your PR description under the `## Changelog`` section. If the entry is valid (i.e., parsing succeeds) or there is not a `- skip`` entry, then a valid changeset file will be created on your forked repository. A commit message like the one below will appear in the PR conversation panel of GitHub web UI:
 
-This process ensures a streamlined and automated approach to maintaining up-to-date release documentation in OpenSearch repositories.
+![Changeset_Created_Updated_Commit_Message](./assets/Changeset_Created_Updated_Commit_Message.png)
 
-For a more detailed walkthrough of the `OpenSearch-bot` app's features, see our [Feature Details](docs/FEATURE_DETAILS.md) document.
+For more references on how to create a valid changelog entry, please refer to [OpenSearch Changelog Workflow and Release Notes Script](https://github.com/BigSamu/OpenSearch_Parse_Changelog_Action) repository.
 
-## Usage
+## 4. Mantainers
 
-In order for this app to work as intended, whenever a PR is opened from an OpenSearch fork against the base repository, the PR description must include a `## Changelog` heading.
+- [Samuel Valdes Gutierrez](https://github.com/BigSamu) - OpenSearch Slack [link](https://opensearch.slack.com/archives/D05T6HWHLG3)
+- [Johnathon Bowers](https://github.com/JohnathonBowers) - OpenSearch Slack [link](https://opensearch.slack.com/archives/D06075U158Q)
 
-Beneath this heading is where you will add a changelog entry or entries summarizing your contribution.
+## 5. Contributing
 
-In order for the app to parse your entries and generate changeset files, each entry must:
+The **Automated Changelog Release Notes Process** is the result of a concerted effort by OpenSearch maintainers and contributors to improve the development experience for all involved in OpenSearch suite.
 
-- begin with a hyphen followed by a space ("- ")
-- include one of the following category prefixes, followed by a colon:
-  - breaking
-  - chore
-  - deprecate
-  - doc
-  - feat
-  - fix
-  - infra
-  - refactor
-  - security
-  - skip
-  - test
-- conclude with a description of your contribution in the imperative mood using no more than 100 characters
+Contributions to the **OpenSearch Changelog PR Bridge** are welcome! See our [Developer Guide](./DEVELOPER_GUIDE.md) for instructions on how to set up the project in your local environment and [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
-If the changes introduced in your PR are minor (e.g., fixing a typo), you can enter `- skip` in the "Changelog" section to instruct the app not to generate a changeset file. Please note that, if you enter `-skip` in the "Changelog" section, no other categories or descriptions can be present.
+## 6. License
 
-Here is an example of a properly-formatted changelog entry in a PR description:
+This project is an open-source product released under the Apache 2.0 license (see either [the Apache site](https://www.apache.org/licenses/LICENSE-2.0) or the [LICENSE.txt file](./LICENSE.txt)). The Apache 2.0 license allows you to freely use, modify, distribute, and sell your own products that include Apache 2.0 licensed software.
 
-```markdown
-## Changelog
+## 7. Need Help?
 
-- feat: Add new feature
-```
-
-The app is equipped with robust error handling so that, if your PR description lacks the required information or needs reformatting in some way, the process will terminate and a comment will be added to your PR explaining what needs to be fixed.
-
-## Acknowledgements
-
-This app was developed by [Samuel Valdes Gutierrez](https://github.com/BigSamu), [Johnathon Bowers](https://github.com/JohnathonBowers), [Qiwen Li](https://github.com/MadaniKK), and [Will Yang](https://github.com/CMDWillYang), under the supervision of [Josh Romero](https://github.com/joshuarrrr), [Ashwin P. Chandran](https://github.com/ashwin-pc), [Matt Provost](https://github.com/BSFishy), and [Anan Zhuang](https://github.com/ananzh).
-
-## Contributing
-
-Contributions to the `OpenSearch-bot` are welcome! See our [Developer Guide](docs/DEVELOPER_GUIDE.md) for instructions on how to set up the project in your local environment. If you have any suggestions for how to improve the app, please feel free to open an issue or submit a pull request.
-
-## License
-
-This app is licensed under the [MIT License](LICENSE).
+Feel free to contact us in the slack channel or by oppening an issue in this repo.
