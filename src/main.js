@@ -7,7 +7,7 @@ import fileRouter from "./routes/file.routes.js";
 import {
   errorRequestHandler,
   ensureGitHubAppInstalled,
-  validateChangelogPRBridgeSecretKey,
+  verifyReceivedApiKey,
 } from "./middlewares/index.js";
 
 import {
@@ -23,8 +23,8 @@ const app = express(); // Express server
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Validate API key in requests
-app.use(validateChangelogPRBridgeSecretKey);
+// Verify incoming API key in request headers
+app.use(verifyReceivedApiKey);
 
 // Ensure GitHub App is installed in the repository
 app.use(ensureGitHubAppInstalled);
