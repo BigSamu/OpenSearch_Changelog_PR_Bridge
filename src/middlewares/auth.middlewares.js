@@ -11,10 +11,10 @@ export async function ensureGitHubAppInstalled(req, res, next) {
       repo
     );
     if (!installed) {
-      return res.status(401).json({
+      return res.status(403).json({
         error: {
-          status: 401,
-          message: `GitHub App is not installed in the specified repository (owner: '${owner}' and repo: '${repo}'). Access unauthorized.`,
+          status: 403,
+          message: `GitHub App is not installed in the specified repository (owner: '${owner}' and repo: '${repo}'). Access forbidden.`,
         },
       });
     }
@@ -39,7 +39,12 @@ export const verifyReceivedApiKey = (req, res, next) => {
   const receivedApiKey = req.headers['x-api-key'];
   const authorizedApiKey = CHANGELOG_PR_BRIDGE_API_KEY;
   if (!receivedApiKey || receivedApiKey !== authorizedApiKey) {
-    throw new UnauthorizedAPIKeyError();
+    return res.status(403).json({
+      error: {
+        status: 401,
+        message: `Incorrect API Key. Access unauthorized.`,
+      },
+    });
   }
 
   next();
