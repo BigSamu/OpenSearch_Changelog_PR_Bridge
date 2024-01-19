@@ -38,7 +38,8 @@ export async function ensureGitHubAppInstalled(req, res, next) {
 export const verifyReceivedApiKey = (req, res, next) => {
   const receivedApiKey = req.headers['x-api-key'];
   const authorizedApiKey = CHANGELOG_PR_BRIDGE_API_KEY;
-
+  console.log("received", receivedApiKey)
+  console.log("authorized", authorizedApiKey)
   if (!receivedApiKey || receivedApiKey !== authorizedApiKey) {
     throw new UnauthorizedAPIKeyError();
   }
