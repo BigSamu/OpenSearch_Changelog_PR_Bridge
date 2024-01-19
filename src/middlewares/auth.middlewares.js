@@ -1,5 +1,5 @@
 import { authServices } from "../services/index.js"; // Adjust the path as necessary
-import { CHANGELOG_PR_BRIDGE_SECRET_KEY } from "../config/constants.js";
+import { CHANGELOG_PR_BRIDGE_API_KEY } from "../config/constants.js";
 import { UnauthorizedAPIKeyError } from "../errors/index.js";
 
 export async function ensureGitHubAppInstalled(req, res, next) {
@@ -37,7 +37,7 @@ export async function ensureGitHubAppInstalled(req, res, next) {
 
 export const verifyReceivedApiKey = (req, res, next) => {
   const receivedApiKey = req.headers['x-api-key'];
-  const authorizedApiKey = CHANGELOG_PR_BRIDGE_SECRET_KEY;
+  const authorizedApiKey = CHANGELOG_PR_BRIDGE_API_KEY;
 
   if (receivedApiKey !== authorizedApiKey) {
     throw new UnauthorizedAPIKeyError();
