@@ -39,7 +39,7 @@ export const verifyReceivedApiKey = (req, res, next) => {
   const receivedApiKey = req.headers['x-api-key'];
   const authorizedApiKey = CHANGELOG_PR_BRIDGE_API_KEY;
 
-  if (receivedApiKey !== authorizedApiKey) {
+  if (!receivedApiKey || receivedApiKey !== authorizedApiKey) {
     throw new UnauthorizedAPIKeyError();
   }
 
