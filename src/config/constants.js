@@ -10,5 +10,3 @@ export const GITHUB_APP_IDENTIFIER = process.env.GITHUB_APP_IDENTIFIER;
 export const GITHUB_APP_PRIVATE_KEY = process.env.GITHUB_APP_PRIVATE_KEY;
 export const CHANGELOG_PR_BRIDGE_API_KEY = process.env.CHANGELOG_PR_BRIDGE_API_KEY;
 export const CHANGESET_PATH = "changelogs/fragments";
-
-console.log(CHANGELOG_PR_BRIDGE_API_KEY)
