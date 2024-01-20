@@ -35,7 +35,7 @@ const getAllFileByPath = async (req, res, next) => {
 };
 
 const createOrUpdateFile = async (req, res, next) => {
-  console.log(req)
+  
   try {
     const { owner, repo, branch, path } = req.query;
     const { content, message } = req.body;

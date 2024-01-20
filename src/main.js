@@ -7,6 +7,7 @@ import fileRouter from "./routes/file.routes.js";
 import {
   errorRequestHandler,
   ensureGitHubAppInstalled,
+  verifyReceivedApiKey,
 } from "./middlewares/index.js";
 
 import {
@@ -15,23 +16,26 @@ import {
 } from "./config/constants.js";
 
 
-// 2) Intiliazing express instance
+// Initiliaze express instance
 const app = express(); // Express server
 
-// 3) Setup body-parsing  middlewares
+// Set up body-parsing middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 4) Ensure GitHub App is installed in the repository
+// Verify incoming API key in request headers
+app.use(verifyReceivedApiKey);
+
+// Ensure GitHub App is installed in the repository
 app.use(ensureGitHubAppInstalled);
 
-// 5) Suscribe API routes
+// Suscribe API routes
 app.use(API_PATH_SUFFIX, fileRouter);
 
-// 8) Setup error handlers middlewares for requests
+// Setup error handlers middlewares for requests
 app.use(errorRequestHandler);
 
-// 9) Running instance of Express server in selected port
+// Run Express server instance in selected port
 app.listen(PORT, () => {
   console.log(`Server is listening in port: ${PORT}`);
   console.log("Press Ctrl + C to quit.");
