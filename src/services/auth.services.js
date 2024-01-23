@@ -76,6 +76,6 @@ const getOctokitClient = async (owner, repo) => {
 };
 
 export const authServices = {
-  getOcktokitClient: getOctokitClient,
+  getOctokitClient,
   checkAppInstallation,
 };
