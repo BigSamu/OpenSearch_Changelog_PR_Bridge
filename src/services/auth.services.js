@@ -55,7 +55,7 @@ const checkAppInstallation = async (owner, repo) => {
  * @returns {Promise<Octokit>} A Promise that resolves to an authenticated Octokit instance.
  * @throws {Error} - If an error occurs while obtaining the installation ID.
  */
-const getOcktokitClient = async (owner, repo) => {
+const getOctokitClient = async (owner, repo) => {
   try {
     const ghApp = new App({
       appId: GITHUB_APP_IDENTIFIER,
@@ -76,6 +76,6 @@ const getOcktokitClient = async (owner, repo) => {
 };
 
 export const authServices = {
-  getOcktokitClient,
+  getOcktokitClient: getOctokitClient,
   checkAppInstallation,
 };
