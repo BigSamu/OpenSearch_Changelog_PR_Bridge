@@ -21,6 +21,7 @@ functions:
 plugins:
   - serverless-offline # For emulating AWS Lambda and API Gateway locally
   - serverless-dotenv-plugin # For loading env variables from a .env file
+  - serverless-webpack
   # - serverless-bundle # For bundling the project
 
 custom:
