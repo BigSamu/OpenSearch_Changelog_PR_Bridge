@@ -1,6 +1,5 @@
 import { authServices } from "../services/index.js"; // Adjust the path as necessary
 import { CHANGELOG_PR_BRIDGE_API_KEY } from "../config/constants.js";
-import { UnauthorizedAPIKeyError } from "../errors/index.js";
 
 export async function ensureGitHubAppInstalled(req, res, next) {
   const { owner, repo } = req.query;
@@ -48,4 +47,4 @@ export const verifyReceivedApiKey = (req, res, next) => {
   }
 
   next();
-}
+};

@@ -31,7 +31,7 @@ const checkAppInstallation = async (owner, repo) => {
     );
     return {
       installed: true,
-      suspended: installation?.suspended_by ? true : false,
+      suspended: !!installation?.suspended_by,
       installationId: installation.id,
     };
   } catch (error) {
