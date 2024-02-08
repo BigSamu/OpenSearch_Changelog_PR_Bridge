@@ -38,7 +38,7 @@ export const verifyReceivedApiKey = (req, res, next) => {
   const receivedApiKey = req.headers['x-api-key'];
   const authorizedApiKey = CHANGELOG_PR_BRIDGE_API_KEY;
   if (!receivedApiKey || receivedApiKey !== authorizedApiKey) {
-    return res.status(403).json({
+    return res.status(401).json({
       error: {
         status: 401,
         message: `Incorrect API Key. Access unauthorized.`,

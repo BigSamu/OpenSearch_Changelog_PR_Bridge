@@ -3,7 +3,7 @@ import { fileServices, authServices } from "../services/index.js";
 const getFileByPath = async (req, res, next) => {
   try {
     const { owner, repo, branch, path } = req.query;
-    const octokit = await authServices.getOcktokitClient(owner, repo);
+    const octokit = await authServices.getOctokitClient(owner, repo);
     const file = await fileServices.getFileByPath(
       octokit,
       owner,
@@ -20,7 +20,7 @@ const getFileByPath = async (req, res, next) => {
 const getAllFileByPath = async (req, res, next) => {
   try {
     const { owner, repo, branch, path } = req.query;
-    const octokit = await authServices.getOcktokitClient(owner, repo);
+    const octokit = await authServices.getOctokitClient(owner, repo);
     const files = await fileServices.getAllFilesByPath(
       octokit,
       owner,
@@ -39,7 +39,7 @@ const createOrUpdateFile = async (req, res, next) => {
     const { owner, repo, branch, path } = req.query;
     const { content, message } = req.body;
     const decodedContent = Buffer.from(content, "base64").toString("utf-8");
-    const octokit = await authServices.getOcktokitClient(owner, repo);
+    const octokit = await authServices.getOctokitClient(owner, repo);
     await fileServices.createOrUpdateFileByPath(
       octokit,
       owner,
@@ -59,7 +59,7 @@ const deleteFileByPath = async (req, res, next) => {
   try {
     const { owner, repo, branch, path } = req.query;
     const { message } = req.body;
-    const octokit = await authServices.getOcktokitClient(owner, repo);
+    const octokit = await authServices.getOctokitClient(owner, repo);
     await fileServices.deleteFileByPath(
       octokit,
       owner,
