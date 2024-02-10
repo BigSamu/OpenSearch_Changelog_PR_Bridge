@@ -27,6 +27,9 @@ plugins:
 custom:
   serverless-offline:
     httpPort: 3000 # The port serverless-offline will run on
+  webpack:
+    webpackConfig: './webpack.config.cjs' # Updated path to webpack configuration
+
 
 package:
   exclude:
