@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "description": "A GitHub App that generates changeset files from OpenSearch PR descriptions",
   "main": "src/main.js",
-  "type":"module",
   "engines": {
     "node": ">=18.x"
   },

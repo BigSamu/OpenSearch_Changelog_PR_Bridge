@@ -6,8 +6,7 @@ provider:
   stage: dev # Specify the stage of your application
   region: sa-east-1 # Specify the region of your application
   environment:
-    # Environment variables can be defined here
-    API_PATH_SUFFIX: /api
+    NODE_ENV: production # Set the environment to production
 
 functions:
   app: # The name of the AWS Lambda function
@@ -28,10 +27,14 @@ custom:
   serverless-offline:
     httpPort: 3000 # The port serverless-offline will run on
   webpack:
-    webpackConfig: './webpack.config.cjs' # Updated path to webpack configuration
+    webpackConfig: 'webpack.config.js' # Name of webpack configuration file
+    includeModules: true # Node modules configuration for packaging
+    packager: 'npm' # Packager that will be used to package your external modules
+    excludeFiles: src/**/*.test.js # Provide a glob for files to ignore
 
 
 package:
+  individually: true # This will package each function individually
   exclude:
     - node_modules/**
     - .git/**

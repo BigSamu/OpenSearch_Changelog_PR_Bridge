@@ -9,6 +9,5 @@ dist/
 .env
 .DS_Store
 
-*.drawio.bkp
-
 .vercel
+.serverless
