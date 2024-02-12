@@ -3,6 +3,7 @@
 // ---------------------------------------------------
 
 import express from "express";
+import serverless from 'serverless-http';
 import fileRouter from "./routes/file.routes.js";
 import {
   errorRequestHandler,
@@ -36,7 +37,13 @@ app.use(API_PATH_SUFFIX, fileRouter);
 app.use(errorRequestHandler);
 
 // Run Express server instance in selected port
-app.listen(PORT, () => {
-  console.log(`Server is listening in port: ${PORT}`);
-  console.log("Press Ctrl + C to quit.");
-});
+if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
+  // Run Express server instance in selected port only if not in AWS Lambda
+  app.listen(PORT, () => {
+    console.log(`Server is listening on port: ${PORT}`);
+    console.log("Press Ctrl + C to quit.");
+  });
+}
+
+// Export serverless app
+export const handler = serverless(app);

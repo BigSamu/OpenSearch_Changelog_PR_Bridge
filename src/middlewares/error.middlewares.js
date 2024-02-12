@@ -10,4 +10,5 @@ export const errorRequestHandler = (err, req, res, next) => {
       message: message,
     },
   });
+  next();
 };

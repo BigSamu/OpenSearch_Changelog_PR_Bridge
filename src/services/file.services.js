@@ -29,7 +29,7 @@ const getFileByPath = async (octokit, owner, repo, branch, path) => {
       sha: data.sha,
     };
   } catch (error) {
-    if(error.status === 404) {
+    if (error.status === 404) {
       console.log(`File '${path}' not found.`);
       return;
     }
@@ -130,7 +130,6 @@ const createOrUpdateFileByPath = async (
     console.log(message);
     return { message: message };
   } catch (error) {
-    
     console.error(`Error creating/updating file '${path}':`, error.message);
     throw error;
   }
