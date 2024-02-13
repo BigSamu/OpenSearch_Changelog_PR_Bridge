@@ -3,7 +3,7 @@ service: my-express-application
 provider:
   name: aws
   runtime: nodejs18.x # Nodejs version used by AWS Lambda functions
-  stage: dev # Specify the stage of your application
+  stage: prod  # Default to dev if not specified
   region: sa-east-1 # Specify the region of your application
   environment:
     NODE_ENV: production # Set the environment to production
