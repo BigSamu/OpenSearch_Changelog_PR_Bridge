@@ -1,5 +1,0 @@
-
-.github/workflows/aws_lambda_deploy_workflow.yml
-# Webpack
-webpack.config.cjs
-serverless.yml

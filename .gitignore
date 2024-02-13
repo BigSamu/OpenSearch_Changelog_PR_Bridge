@@ -11,3 +11,6 @@ dist/
 
 .vercel
 .serverless
+
+.env.development
+.env.production

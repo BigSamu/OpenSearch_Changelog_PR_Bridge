@@ -1,8 +1,14 @@
-
 import dotenv from 'dotenv';
+import path from 'path';
 
-// Load environment variables from .env file
-dotenv.config();
+// Determinar el entorno actual basándose en NODE_ENV, con un valor predeterminado de 'development'
+const env = process.env.NODE_ENV || 'development';
+
+// Construir el nombre del archivo .env basado en el entorno actual
+const envPath = path.resolve(process.cwd(), `.env.${env}`);
+
+// Cargar variables de entorno desde el archivo .env correspondiente
+dotenv.config({ path: envPath });
 
 export const PORT = process.env.PORT || 3000;
 export const API_PATH_SUFFIX = "/api/v1";

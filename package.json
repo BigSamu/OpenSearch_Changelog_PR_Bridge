@@ -8,8 +8,9 @@
     "node": ">=18.x"
   },
   "scripts": {
-    "dev": "serverless offline",
-    "deploy": "serverless deploy",
+    "dev": "nodemon --ignore dist/ --exec 'sls offline'",
+    "deploy:prod": "serverless deploy --stage prod",
+    "deploy:dev": "serverless deploy --stage dev",
     "test": "(jest && make-coverage-badge --output-path ./badges/coverage.svg) || make-coverage-badge --output-path ./badges/coverage.svg"
   },
   "jest": {
