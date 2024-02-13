@@ -20,7 +20,7 @@ jobs:
       - name: Create .env.production file
         run: |
           echo "APP_GITHUB_IDENTIFIER=${{ secrets.APP_GITHUB_IDENTIFIER }}" >> .env.production
-          echo "APP_GITHUB_PRIVATE_KEY=${{ secrets.APP_GITHUB_PRIVATE_KEY }}" >> .env.production
+          echo "APP_GITHUB_PRIVATE_KEY=\`${{ secrets.APP_GITHUB_PRIVATE_KEY }}\`" >> .env.production
           echo "CHANGELOG_PR_BRIDGE_API_KEY=${{ secrets.CHANGELOG_PR_BRIDGE_API_KEY }}" >> .env.production
 
         shell: bash
