@@ -5,6 +5,8 @@ provider:
   runtime: nodejs18.x # Nodejs version used by AWS Lambda functions
   stage: ${opt:stage, 'dev'}  # Default to dev if not specified
   region: sa-east-1 # Specify the region of your application
+  environment:
+    NODE_ENV: ${self:custom.stageMapping.${self:provider.stage}, 'development'} # Set the environment based on stage
 
 functions:
   app: # The name of the AWS Lambda function

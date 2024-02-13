@@ -1,7 +1,7 @@
 import { App } from "octokit";
 import {
-  GITHUB_APP_IDENTIFIER,
-  GITHUB_APP_PRIVATE_KEY,
+  APP_GITHUB_IDENTIFIER,
+  APP_GITHUB_PRIVATE_KEY,
 } from "../config/constants.js";
 
 /**
@@ -20,8 +20,8 @@ import {
 
 const checkAppInstallation = async (owner, repo) => {
   const ghApp = new App({
-    appId: GITHUB_APP_IDENTIFIER,
-    privateKey: GITHUB_APP_PRIVATE_KEY,
+    appId: APP_GITHUB_IDENTIFIER,
+    privateKey: APP_GITHUB_PRIVATE_KEY,
   });
 
   try {
@@ -58,8 +58,8 @@ const checkAppInstallation = async (owner, repo) => {
 const getOctokitClient = async (owner, repo) => {
   try {
     const ghApp = new App({
-      appId: GITHUB_APP_IDENTIFIER,
-      privateKey: GITHUB_APP_PRIVATE_KEY,
+      appId: APP_GITHUB_IDENTIFIER,
+      privateKey: APP_GITHUB_PRIVATE_KEY,
     });
     const { data: installation } = await ghApp.octokit.request(
       `GET /repos/${owner}/${repo}/installation`,

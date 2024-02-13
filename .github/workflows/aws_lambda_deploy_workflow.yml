@@ -17,6 +17,13 @@ jobs:
         with:
           node-version: '18' # Ensure the version matches your serverless runtime environment
 
+      - name: Create .env.production file
+        run: |
+          echo "APP_GITHUB_IDENTIFIER=${{ secrets.APP_GITHUB_IDENTIFIER }}" >> .env.production
+          echo "APP_GITHUB_PRIVATE_KEY=${{ secrets.APP_GITHUB_PRIVATE_KEY }}" >> .env.production
+          echo "CHANGELOG_PR_BRIDGE_API_KEY=${{ secrets.CHANGELOG_PR_BRIDGE_API_KEY }}" >> .env.production
+
+        shell: bash
       - name: Install dependencies
         run: npm install
 
