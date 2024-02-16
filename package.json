@@ -9,7 +9,7 @@
     "node": ">=18.x"
   },
   "scripts": {
-    "start": "node ./main.js",
+    "start": "node ./src/main.js",
     "dev": "nodemon --ignore dist/ --exec 'sls offline'",
     "deploy:prod": "serverless deploy --stage prod",
     "deploy:dev": "serverless deploy --stage dev",
