@@ -10,7 +10,7 @@ const envPath = path.resolve(process.cwd(), `.env.${env}`);
 // Cargar variables de entorno desde el archivo .env correspondiente
 dotenv.config({ path: envPath });
 
-export const PORT = 3000;
+export const PORT = 8080;
 export const API_PATH_SUFFIX = "/api/v1";
 export const APP_GITHUB_IDENTIFIER = process.env.APP_GITHUB_IDENTIFIER;
 export const APP_GITHUB_PRIVATE_KEY = process.env.APP_GITHUB_PRIVATE_KEY;
