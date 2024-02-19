@@ -25,7 +25,7 @@ app.use(verifyReceivedApiKey);
 // Ensure GitHub App is installed in the repository
 app.use(ensureGitHubAppInstalled);
 
-// Suscribe API routes
+// Subscribe API routes
 app.use(API_PATH_SUFFIX, fileRouter);
 
 // Setup error handlers middlewares for requests
