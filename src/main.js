@@ -12,7 +12,7 @@ import {
 
 import { PORT, API_PATH_SUFFIX } from "./config/constants.js";
 
-// Initiliaze express instance
+// Initialize express instance
 const app = express(); // Express server
 
 // Set up body-parsing middlewares
