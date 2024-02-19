@@ -32,8 +32,6 @@ export async function ensureGitHubAppInstalled(req, res, next) {
   }
 }
 
-const { APP_GITHUB_IDENTIFIER } = process.env;
-
 export const verifyReceivedApiKey = (req, res, next) => {
   const receivedApiKey = req.headers["x-api-key"];
   if (!receivedApiKey || receivedApiKey !== AuthorizedAPIKey) {
