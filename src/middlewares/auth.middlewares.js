@@ -38,10 +38,7 @@ export const verifyReceivedApiKey = (req, res, next) => {
   const receivedApiKey = req.headers["x-api-key"];
   if (!receivedApiKey || receivedApiKey !== AuthorizedAPIKey) {
     const errorMessage = !receivedApiKey
-      ? {
-          mdg: `API Key is missing. Access unauthorized.`,
-          AuthorizedAPIKey,
-        }
+      ? `API Key is missing. Access unauthorized.`
       : `Incorrect API Key. Access unauthorized.`;
     console.error(errorMessage);
     return res.status(401).json({
