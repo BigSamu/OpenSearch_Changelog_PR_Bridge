@@ -10,10 +10,30 @@ const envPath = path.resolve(process.cwd(), `.env.${env}`);
 // Cargar variables de entorno desde el archivo .env correspondiente
 dotenv.config({ path: envPath });
 
-export const PORT = 3000;
+export const {
+  PORT = 8080,
+  APP_GITHUB_IDENTIFIER,
+  APP_GITHUB_PRIVATE_KEY,
+  CHANGELOG_PR_BRIDGE_API_KEY,
+} = process.env;
+
+const requiredVariables = [
+  "APP_GITHUB_IDENTIFIER",
+  "APP_GITHUB_PRIVATE_KEY",
+  "CHANGELOG_PR_BRIDGE_API_KEY",
+];
+const missingVariables = requiredVariables.filter(
+  (variable) => !process.env[variable]
+);
+
+if (missingVariables.length > 0) {
+  console.error(
+    `${missingVariables.join(", ")} ${
+      missingVariables.length > 1 ? "are" : "is"
+    } required env values`
+  );
+  process.exit(1);
+}
+
 export const API_PATH_SUFFIX = "/api/v1";
-export const APP_GITHUB_IDENTIFIER = process.env.APP_GITHUB_IDENTIFIER;
-export const APP_GITHUB_PRIVATE_KEY = process.env.APP_GITHUB_PRIVATE_KEY;
-export const CHANGELOG_PR_BRIDGE_API_KEY =
-  process.env.CHANGELOG_PR_BRIDGE_API_KEY;
 export const CHANGESET_PATH = "changelogs/fragments";

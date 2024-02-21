@@ -3,7 +3,6 @@
 // ---------------------------------------------------
 
 import express from "express";
-import serverless from 'serverless-http';
 import fileRouter from "./routes/file.routes.js";
 import {
   errorRequestHandler,
@@ -11,13 +10,9 @@ import {
   verifyReceivedApiKey,
 } from "./middlewares/index.js";
 
-import {
-  PORT,
-  API_PATH_SUFFIX,
-} from "./config/constants.js";
+import { PORT, API_PATH_SUFFIX } from "./config/constants.js";
 
-
-// Initiliaze express instance
+// Initialize express instance
 const app = express(); // Express server
 
 // Set up body-parsing middlewares
@@ -30,7 +25,7 @@ app.use(verifyReceivedApiKey);
 // Ensure GitHub App is installed in the repository
 app.use(ensureGitHubAppInstalled);
 
-// Suscribe API routes
+// Subscribe API routes
 app.use(API_PATH_SUFFIX, fileRouter);
 
 // Setup error handlers middlewares for requests
@@ -44,6 +39,3 @@ if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
     console.log("Press Ctrl + C to quit.");
   });
 }
-
-// Export serverless app
-export const handler = serverless(app);
