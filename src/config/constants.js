@@ -1,13 +1,13 @@
 import dotenv from "dotenv";
 import path from "path";
 
-// Determinar el entorno actual basándose en NODE_ENV, con un valor predeterminado de 'development'
+// Determine the current environment based on NODE_ENV, defaulting to 'development'
 const env = process.env.NODE_ENV || "development";
 
-// Construir el nombre del archivo .env basado en el entorno actual
+// Build the .env file name based on the current environment
 const envPath = path.resolve(process.cwd(), `.env.${env}`);
 
-// Cargar variables de entorno desde el archivo .env correspondiente
+// Load environment variables from the corresponding .env file
 dotenv.config({ path: envPath });
 
 export const {
@@ -22,6 +22,7 @@ const requiredVariables = [
   "APP_GITHUB_PRIVATE_KEY",
   "CHANGELOG_PR_BRIDGE_API_KEY",
 ];
+
 const missingVariables = requiredVariables.filter(
   (variable) => !process.env[variable]
 );
