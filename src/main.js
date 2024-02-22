@@ -3,6 +3,7 @@
 // ---------------------------------------------------
 
 import express from "express";
+import serverless from 'serverless-http';
 import {fileRouter, authRouter} from "./routes/index.js";
 import { errorRequestHandler } from "./middlewares/index.js";
 
