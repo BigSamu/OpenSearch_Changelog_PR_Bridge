@@ -31,12 +31,12 @@ const checkAppInstallation = async (owner, repo) => {
     );
     return {
       installed: true,
-      suspended: !!installation?.suspended_by,
+      suspended: installation?.suspended_by ? true : false,
       installationId: installation.id,
     };
   } catch (error) {
     if (error.status === 404) {
-      return { installed: false, suspended: false, installationId: null };
+      return { installed: false, suspended: null, installationId: null };
     } else {
       console.error(
         `Error checking GitHub App installation for owner '${owner}' and repo '${repo}':`,
