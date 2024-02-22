@@ -13,9 +13,10 @@ dotenv.config({ path: envPath });
 export const {
   PORT = 8080,
   APP_GITHUB_IDENTIFIER,
-  APP_GITHUB_PRIVATE_KEY,
   CHANGELOG_PR_BRIDGE_API_KEY,
 } = process.env;
+
+export const APP_GITHUB_PRIVATE_KEY = atob(process.env.APP_GITHUB_PRIVATE_KEY);
 
 const requiredVariables = [
   "APP_GITHUB_IDENTIFIER",
