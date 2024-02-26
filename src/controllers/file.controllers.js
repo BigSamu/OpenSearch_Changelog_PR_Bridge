@@ -40,7 +40,7 @@ const createOrUpdateFile = async (req, res, next) => {
     const { content, message } = req.body;
     const decodedContent = Buffer.from(content, "base64").toString("utf-8");
     const octokit = await authServices.getOctokitClient(owner, repo);
-    await fileServices.createOrUpdateFileByPath(
+    const { message: fileServiceMsg } = await fileServices.createOrUpdateFileByPath(
       octokit,
       owner,
       repo,
@@ -49,7 +49,7 @@ const createOrUpdateFile = async (req, res, next) => {
       decodedContent,
       message
     );
-    res.status(201).json({ message: "File created/updated successfully" });
+    res.status(201).json({ message: fileServiceMsg || "File created/updated successfully" });
   } catch (error) {
     next(error);
   }
