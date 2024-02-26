@@ -37,7 +37,5 @@ if (missingVariables.length > 0) {
   process.exit(1);
 }
 
-console.log(`${APP_GITHUB_PRIVATE_KEY}`);
-
 export const API_PATH_SUFFIX = "/api/v1";
 export const CHANGESET_PATH = "changelogs/fragments";

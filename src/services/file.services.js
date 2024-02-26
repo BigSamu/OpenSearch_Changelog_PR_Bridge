@@ -116,24 +116,38 @@ const createOrUpdateFileByPath = async (
       branch,
       path
     );
-    // const sha = changesetFile ? changesetFile.sha : undefined;
-    await octokit.rest.repos.createOrUpdateFileContents({
-      owner: owner,
-      repo: repo,
-      branch: branch,
-      path: path,
-      message: message,
-      content: Buffer.from(content).toString("base64"),
-      sha: changesetFile?.sha,
-    });
-    // Log the message determined by the calling function
-    console.log(message);
-    return { message: message };
+
+    let currentContent = '';
+
+    // Check if the file already exists
+    if (changesetFile && changesetFile.content) {
+      // Decode the Base64 encoded content
+      currentContent = Buffer.from(changesetFile.content, 'base64').toString();
+    }
+
+    // Compare the current content with the new content
+    if (currentContent === content) {
+      console.log('No changes to the file content. Skipping update.');
+      return { message: 'No changes to the file content. Skipping update.' };
+    } else {
+      await octokit.rest.repos.createOrUpdateFileContents({
+        owner: owner,
+        repo: repo,
+        branch: branch,
+        path: path,
+        message: message,
+        content: Buffer.from(content).toString("base64"),
+        sha: changesetFile?.sha,
+      });
+      console.log(message);
+      return { message: message };
+    }
   } catch (error) {
     console.error(`Error creating/updating file '${path}':`, error.message);
     throw error;
   }
 };
+
 
 /**
  * Deletes a file from the GitHub repository.
