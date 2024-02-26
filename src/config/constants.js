@@ -16,6 +16,8 @@ export const {
   CHANGELOG_PR_BRIDGE_API_KEY,
 } = process.env;
 
+// Decode the GitHub private key from base64. Due to the way AWS Elastic Beanstalk handles environment variables, 
+// we need to store the private key as a base64 encoded string and decode it here.
 export const APP_GITHUB_PRIVATE_KEY = atob(process.env.APP_GITHUB_PRIVATE_KEY);
 
 const requiredVariables = [
@@ -30,8 +32,7 @@ const missingVariables = requiredVariables.filter(
 
 if (missingVariables.length > 0) {
   console.error(
-    `${missingVariables.join(", ")} ${
-      missingVariables.length > 1 ? "are" : "is"
+    `${missingVariables.join(", ")} ${missingVariables.length > 1 ? "are" : "is"
     } required env values`
   );
   process.exit(1);
