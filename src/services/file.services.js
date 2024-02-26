@@ -125,6 +125,9 @@ const createOrUpdateFileByPath = async (
       currentContent = Buffer.from(changesetFile.content, 'base64').toString();
     }
 
+    console.log('Current content:', currentContent);
+    console.log('New content:', content);
+
     // Compare the current content with the new content
     if (currentContent === content) {
       console.log('No changes to the file content. Skipping update.');
